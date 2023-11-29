@@ -71,3 +71,19 @@ width:100%;
     padding: 0; /* enlève les puces par défaut */
     gap: 1rem; /* espace entre les enfants */
 }
+
+.caroussel_lien {
+    text-decoration: none;
+    padding: 10px;
+    color: #555;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.caroussel_lien.actif {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #0056b3;
+}
