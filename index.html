@@ -9,10 +9,15 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     <title>Carrousel</title>
 </head>
+
 <body>
-<div class="carrousel_parent-ecrans" x-ref="parent" @scroll.debounce.250ms.passive="hrefCourant = '#'+[...$refs.parent.children].find(e=>e.getBoundingClientRect().x>=0).id">
-    <button @click="parent = $refs.parent; parent.scrollLeft -= parent.clientWidth" class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant">&lt;</button>
-        <button @click="parent = $refs.parent; parent.scrollLeft += parent.clientWidth" class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant">&gt;</button>
+    <div class="carrousel">
+        <div class="carrousel_parent-ecrans" x-ref="parent"
+            @scroll.debounce.250ms.passive="hrefCourant = '#'+[...$refs.parent.children].find(e=>e.getBoundingClientRect().x>=0).id">
+            <button @click="parent = $refs.parent; parent.scrollLeft -= parent.clientWidth"
+                class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant">&lt;</button>
+            <button @click="parent = $refs.parent; parent.scrollLeft += parent.clientWidth"
+                class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant">&gt;</button>
             <div class="carrousel_parent-ecrans" x-ref="parent">
                 <div id="ecran-1" class="carrousel_ecran">
                     <figure>
@@ -45,13 +50,16 @@
                     </figure>
                 </div>
             </div>
-            <ul class="caroussel_liste-liens">
-                <li><a href="#ecran-1" class="caroussel_lien" :class="{actif:hrefCourant==='#ecran-1'}">ecran 1</a></li>
-                <li><a href="#ecran-2" class="caroussel_lien" :class="{actif:hrefCourant==='#ecran-2'}">ecran 2</a></li>
-                <li><a href="#ecran-3" class="caroussel_lien" :class="{actif:hrefCourant==='#ecran-3'}">ecran 3</a></li>
-                <li><a href="#ecran-4" class="caroussel_lien" :class="{actif:hrefCourant==='#ecran-4'}">ecran 4</a></li>
-                <li><a href="#ecran-5" class="caroussel_lien" :class="{actif:hrefCourant==='#ecran-5'}">ecran 5</a></li>
-            </ul>
-</div>
+        </div>
+        <ul class="caroussel_liste-liens">
+            <li><a href="#ecran-1" class="caroussel_lien" :class="{actif:hrefCourant==='#ecran-1'}">ecran 1</a></li>
+            <li><a href="#ecran-2" class="caroussel_lien" :class="{actif:hrefCourant==='#ecran-2'}">ecran 2</a></li>
+            <li><a href="#ecran-3" class="caroussel_lien" :class="{actif:hrefCourant==='#ecran-3'}">ecran 3</a></li>
+            <li><a href="#ecran-4" class="caroussel_lien" :class="{actif:hrefCourant==='#ecran-4'}">ecran 4</a></li>
+            <li><a href="#ecran-5" class="caroussel_lien" :class="{actif:hrefCourant==='#ecran-5'}">ecran 5</a></li>
+        </ul>
+    </div>
+    </div>
 </body>
+
 </html>
