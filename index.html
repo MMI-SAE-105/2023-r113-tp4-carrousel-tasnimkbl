@@ -10,7 +10,7 @@
     <title>Carrousel</title>
 </head>
 <body>
-<div class="carrousel" x-data="{hrefCourant: '#ecran-1',}">
+<div class="carrousel_parent-ecrans" x-ref="parent" @scroll.debounce.250ms.passive="hrefCourant = '#'+[...$refs.parent.children].find(e=>e.getBoundingClientRect().x>=0).id">
     <button @click="parent = $refs.parent; parent.scrollLeft -= parent.clientWidth" class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant">&lt;</button>
         <button @click="parent = $refs.parent; parent.scrollLeft += parent.clientWidth" class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant">&gt;</button>
             <div class="carrousel_parent-ecrans" x-ref="parent">
